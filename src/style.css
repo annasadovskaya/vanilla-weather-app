@@ -1,0 +1,160 @@
+body {
+  background: radial-gradient(
+    circle at 48.7% 44.3%,
+    rgb(16, 112, 185) 0%,
+    rgb(39, 91, 182) 22.9%,
+    rgb(27, 62, 122) 76.7%,
+    rgb(21, 47, 90) 100.2%
+  );
+}
+input {
+  border: 1px solid;
+  margin: 10px 0;
+  width: 100%;
+  line-height: 30px;
+  border-radius: 5px;
+  padding: 3px 20px;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  background-color: #dfe0e0;
+
+  border-bottom-color: #dfe0e0;
+  border-top-color: #dfe0e0;
+  border-left-color: #dfe0e0;
+  border-right-color: #dfe0e0;
+}
+
+h1 {
+  margin: 30px 0 10px;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  font-weight: 600;
+  color: rgb(73, 73, 73);
+}
+h6 {
+  margin: 5px auto 10px;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  font-weight: 400;
+  color: rgb(73, 73, 73);
+}
+div .main-logo {
+  line-height: 150px;
+  text-align: center;
+  margin: 10px 0 0;
+}
+div .current-weather-info {
+  margin: 10px 0 0 0;
+  font-family: "Roboto", sans-serif;
+  /* color: rgb(30, 30, 138); */
+  color: rgb(81, 80, 80);
+}
+div .next-weather-container {
+  padding: 0;
+  margin: 0 5px 20px 5px;
+}
+div .next-weather-info {
+  text-align: center;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  color: rgb(73, 73, 73);
+}
+ul {
+  padding: 0;
+}
+li {
+  list-style-type: none;
+}
+#search-city {
+  padding-left: 10px;
+  line-height: 34px;
+  margin: 9px 0 11px;
+}
+#search-box {
+  padding: 2px;
+  border: 0;
+}
+button {
+  text-align: center;
+  margin-top: 10px;
+}
+a {
+  text-decoration: none;
+}
+#current-weather-logo {
+  font-size: 120px;
+}
+
+.app {
+  margin: 20px 0;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  color: rgb(218, 218, 218);
+  font-size: 18px;
+  font-weight: 400;
+}
+.card {
+  margin: 0 auto;
+  border-radius: 20px;
+  max-width: 700px;
+  background-color: #eeeeee;
+  box-shadow: 0px 0px 10px 10px #0f2e5f;
+  border: 2px solid #041734;
+}
+.card-body {
+  margin: 15px;
+}
+.search-button {
+  margin-top: 11px;
+}
+.time {
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  color: rgb(73, 73, 73);
+  font-size: 18px;
+  font-weight: 600;
+}
+.container {
+  line-height: 28px;
+}
+
+.current-temperature {
+  font-size: 35px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+.detailed-weather-info {
+  font-size: 18px;
+  font-weight: 400;
+}
+.catitalize-text:first-letter {
+  text-transform: capitalize;
+}
+.next-weather-logo {
+  font-size: 40px;
+}
+.author {
+  margin: 30px 0 10px;
+}
+.author,
+.netlify {
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  color: #eeeeee;
+  font-size: 14px;
+}
+.netlify {
+  margin: 20px auto;
+}
+.social-media {
+  text-align: center;
+  margin: 10px 0 20px;
+}
+.current-weather-info .active {
+  color: rgb(73, 73, 73);
+  cursor: default;
+}
+/* .current-weather-info .active:hover {
+  text-decoration: none;
+} */
