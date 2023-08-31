@@ -111,7 +111,7 @@ function displayTemperature(response) {
 
 function search(city) {
   let apiKey = "befec49c889f95a0ee6e5054ad3ab1e5";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
   axios.get(apiUrl).then(displayTemperature);
 }
 
@@ -121,38 +121,42 @@ function handleSubmit(event) {
   search(cityInputElement.value);
 }
 
-function showFahrenheitTemperature(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector(
-    "#current-temperature-degrees"
-  );
-  celsiusLink.classList.remove("active");
-  fahrenheitLink.classList.add("active");
-  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
-  console.log(fahrenheitTemperature);
+//Deleted
+// function showFahrenheitTemperature(event) {
+//   event.preventDefault();
+//   let temperatureElement = document.querySelector(
+//     "#current-temperature-degrees"
+//   );
+//   celsiusLink.classList.remove("active");
+//   fahrenheitLink.classList.add("active");
+//   let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+//   console.log(fahrenheitTemperature);
 
-  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
-}
+//   temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+// }
 
-function showCelsiusTemperature(event) {
-  event.preventDefault();
-  celsiusLink.classList.add("active");
-  fahrenheitLink.classList.remove("active");
-  let temperatureElement = document.querySelector(
-    "#current-temperature-degrees"
-  );
-  temperatureElement.innerHTML = Math.round(celsiusTemperature);
-}
+// function showCelsiusTemperature(event) {
+//   event.preventDefault();
+//   celsiusLink.classList.add("active");
+//   fahrenheitLink.classList.remove("active");
+//   let temperatureElement = document.querySelector(
+//     "#current-temperature-degrees"
+//   );
+//   temperatureElement.innerHTML = Math.round(celsiusTemperature);
+// }
 
-let celsiusTemperature = null;
+// let celsiusTemperature = null;
+// //Deleted
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", showFahrenheitTemperature);
+//Deleted
+// let fahrenheitLink = document.querySelector("#fahrenheit-link");
+// fahrenheitLink.addEventListener("click", showFahrenheitTemperature);
 
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", showCelsiusTemperature);
+// let celsiusLink = document.querySelector("#celsius-link");
+// celsiusLink.addEventListener("click", showCelsiusTemperature);
+//Deleted
 
 search("San Diego");
