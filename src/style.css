@@ -51,6 +51,7 @@ div .current-weather-info {
   padding: 0;
 }
 .weather-forecast {
+  line-height: 28px;
   margin-top: 10px;
   color: #193970;
 }
@@ -117,9 +118,6 @@ a {
   color: rgb(73, 73, 73);
   font-size: 18px;
   font-weight: 600;
-}
-.container {
-  line-height: 28px;
 }
 
 .current-temperature {
