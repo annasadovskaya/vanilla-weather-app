@@ -113,12 +113,12 @@ function displayForecast(response) {
     }
   });
 }
+//Adding the forecast
 
 function getForecast(coordinates) {
   console.log(coordinates);
   let apiKey = "0efb4fc16a9ed98dc0b3aafd8491d6ad"; //Open weather API provided by SheCodes
-  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=Imperial`;
-  // let apiUrl = `https://api.shecodes.io/weather/v1/current?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=${apiKey}`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=imperial`;
   axios.get(apiUrl).then(displayForecast);
 }
 
@@ -194,7 +194,7 @@ let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 
 let searchButton = document.querySelector("#search-button");
-form.addEventListener("click", handleSubmit);
+searchButton.addEventListener("click", handleSubmit);
 
 //Deleted
 // let fahrenheitLink = document.querySelector("#fahrenheit-link");
