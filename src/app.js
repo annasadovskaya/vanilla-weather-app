@@ -73,13 +73,12 @@ function displayForecast(response) {
   // forecastElement.innerHTML = forecastHTML;
 
   //Adding the forecast
-
   forecast.forEach(function (forecastDay, index) {
     if (index < 6) {
       const cardCol = document.createElement("div");
       cardCol.className = "col-2 next-weather-info";
 
-      //Creating the div for Date
+      //Creating a div for Date
       const forecastDateDiv = document.createElement("div");
       forecastDateDiv.textContent = `${formatDay(forecastDay.dt)}`;
 
@@ -89,13 +88,13 @@ function displayForecast(response) {
       forecastImg.alt = "Forecast Image";
       forecastImg.style.width = "60px";
 
-      //Creating the forecast temperature
+      //Creating a forecast temperature
       const forecastTemperature = document.createElement("div");
-      //Creating the forecast-max span
+      //Creating a forecast-max span
       const spanForecastMax = document.createElement("span");
       spanForecastMax.textContent = `${Math.round(forecastDay.temp.max)}°`;
 
-      //Creating the forecast-min span
+      //Creating a forecast-min span
       const spanForecastMin = document.createElement("span");
       spanForecastMin.className = "weather-forecast-min";
       spanForecastMin.textContent = `${Math.round(forecastDay.temp.min)}°`;
@@ -113,7 +112,6 @@ function displayForecast(response) {
     }
   });
 }
-//Adding the forecast
 
 function getForecast(coordinates) {
   console.log(coordinates);
@@ -163,45 +161,10 @@ function handleSubmit(event) {
   search(cityInputElement.value);
 }
 
-//Deleted
-// function showFahrenheitTemperature(event) {
-//   event.preventDefault();
-//   let temperatureElement = document.querySelector(
-//     "#current-temperature-degrees"
-//   );
-//   celsiusLink.classList.remove("active");
-//   fahrenheitLink.classList.add("active");
-//   let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
-//   console.log(fahrenheitTemperature);
-
-//   temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
-// }
-
-// function showCelsiusTemperature(event) {
-//   event.preventDefault();
-//   celsiusLink.classList.add("active");
-//   fahrenheitLink.classList.remove("active");
-//   let temperatureElement = document.querySelector(
-//     "#current-temperature-degrees"
-//   );
-//   temperatureElement.innerHTML = Math.round(celsiusTemperature);
-// }
-
-// let celsiusTemperature = null;
-// //Deleted
-
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 
 let searchButton = document.querySelector("#search-button");
 searchButton.addEventListener("click", handleSubmit);
-
-//Deleted
-// let fahrenheitLink = document.querySelector("#fahrenheit-link");
-// fahrenheitLink.addEventListener("click", showFahrenheitTemperature);
-
-// let celsiusLink = document.querySelector("#celsius-link");
-// celsiusLink.addEventListener("click", showCelsiusTemperature);
-//Deleted
 
 search("San Diego");
