@@ -35,7 +35,7 @@
             <form id="search-form">
               <div class="container">
                 <div class="row">
-                  <div id="search-box" class="col-8">
+                  <div id="search-box" class="col-9">
                     <form id="city-form">
                       <input
                         id="city-input"
@@ -46,16 +46,23 @@
                       />
                     </form>
                   </div>
-                  <div id="buttons" class="col-2">
-                    <form>
+                  <div id="buttons" class="col-3">
+                    <button
+                      type="button"
+                      class="btn btn-dark button-search"
+                      id="search-button"
+                    >
+                      Search
+                    </button>
+                    <!-- <form>
                       <input
                         type="submit"
                         value="Search"
                         class="form-control btn btn-primary w-100 search-button"
                       />
-                    </form>
+                    </form> -->
                   </div>
-                  <div id="buttons" class="col-2">
+                  <!-- <div id="buttons" class="col-2">
                     <button
                       type="button"
                       class="btn btn-outline-secondary"
@@ -63,7 +70,7 @@
                     >
                       Current
                     </button>
-                  </div>
+                  </div> -->
                 </div>
               </div>
             </form>
@@ -86,10 +93,8 @@
                       class="current-temperature"
                     ></span>
                     <span class="units">
-                      <span id="main-temperature">℉</span>
-                      <!-- <a href="#" id="celsius-link" class="active">℃</a>
-                      |
-                      <a href="#" id="fahrenheit-link">℉</a> -->
+                      <span id="main-temperature"></span>
+                      <span class="unit">℉</span>
                     </span>
                   </div>
                   <ul>
@@ -108,21 +113,9 @@
               </div>
             </div>
             <!-- Weather forecast-->
-            <div class="weather-forecast" id="forecast">
-              <!-- <div class="row">
-                <div class="col-2 next-weather-info">
-                  <div class="weather-forecast-date">Wed</div>
-                  <img
-                    src="https://openweathermap.org/img/wn/02d@2x.png"
-                    alt=""
-                    width="60px"
-                  />
-                  <div class="weather-forecast-temperatures">
-                    <span class="weather-forecast-max">21°</span>
-                    <span class="weather-forecast-min">12°</span>
-                  </div>
-                </div>
-              </div> -->
+            <div class="weather-forecast">
+              <!-- Uncommented the line -->
+              <div class="row" id="forecast"></div>
             </div>
             <!-- Weather for -->
           </div>

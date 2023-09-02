@@ -34,49 +34,91 @@ function displayForecast(response) {
   console.log(forecast);
   let forecastElement = document.querySelector("#forecast");
 
-  let forecastHTML = `<div class="row">`;
+  while (forecastElement.firstChild) {
+    forecastElement.removeChild(forecastElement.firstChild);
+  }
+
+  // let forecastHTML = `<div class="row">`;
+
+  // forecast.forEach(function (forecastDay, index) {
+  //   if (index < 6) {
+  //     forecastHTML =
+  //       forecastHTML +
+  //       `
+  //  <div class="col-2 next-weather-info">
+  //                 <div class="weather-forecast-date">${formatDay(
+  //                   forecastDay.dt
+  //                 )}</div>
+  //                 <img
+  //                   src="https://openweathermap.org/img/wn/${
+  //                     forecastDay.weather[0].icon
+  //                   }@2x.png"
+  //                   alt=""
+  //                   width="60px"
+  //                 />
+  //                 <div class="weather-forecast-temperatures">
+  //                   <span class="weather-forecast-max">${Math.round(
+  //                     forecastDay.temp.max
+  //                   )}°</span>
+  //                   <span class="weather-forecast-min">${Math.round(
+  //                     forecastDay.temp.min
+  //                   )}°</span>
+  //                 </div>
+  //               </div>
+  // `;
+  //   }
+  // });
+
+  // forecastHTML = forecastHTML + `</div>`;
+  // forecastElement.innerHTML = forecastHTML;
+
+  //Adding the forecast
 
   forecast.forEach(function (forecastDay, index) {
     if (index < 6) {
-      forecastHTML =
-        forecastHTML +
-        `
-   <div class="col-2 next-weather-info">
-                  <div class="weather-forecast-date">${formatDay(
-                    forecastDay.dt
-                  )}</div>
-                  <img
-                    src="https://openweathermap.org/img/wn/${
-                      forecastDay.weather[0].icon
-                    }@2x.png"
-                    alt=""
-                    width="60px"
-                  />
-                  <div class="weather-forecast-temperatures">
-                    <span class="weather-forecast-max">${Math.round(
-                      forecastDay.temp.max
-                    )}°</span>
-                    <span class="weather-forecast-min">${Math.round(
-                      forecastDay.temp.min
-                    )}°</span>
-                  </div>
-                </div>
-  `;
+      const cardCol = document.createElement("div");
+      cardCol.className = "col-2 next-weather-info";
+
+      //Creating the div for Date
+      const forecastDateDiv = document.createElement("div");
+      forecastDateDiv.textContent = `${formatDay(forecastDay.dt)}`;
+
+      //Creating an img element
+      const forecastImg = document.createElement("img");
+      forecastImg.src = `https://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png`;
+      forecastImg.alt = "Forecast Image";
+      forecastImg.style.width = "60px";
+
+      //Creating the forecast temperature
+      const forecastTemperature = document.createElement("div");
+      //Creating the forecast-max span
+      const spanForecastMax = document.createElement("span");
+      spanForecastMax.textContent = `${Math.round(forecastDay.temp.max)}°`;
+
+      //Creating the forecast-min span
+      const spanForecastMin = document.createElement("span");
+      spanForecastMin.className = "weather-forecast-min";
+      spanForecastMin.textContent = `${Math.round(forecastDay.temp.min)}°`;
+
+      //Appending spans
+      forecastTemperature.appendChild(spanForecastMax);
+      forecastTemperature.appendChild(spanForecastMin);
+
+      cardCol.appendChild(forecastDateDiv);
+      cardCol.appendChild(forecastImg);
+      cardCol.appendChild(forecastTemperature);
+
+      //Append coardCol div
+      forecastElement.appendChild(cardCol);
     }
   });
-
-  forecastHTML = forecastHTML + `</div>`;
-  forecastElement.innerHTML = forecastHTML;
-  // console.log(forecastHTML);
 }
 
 function getForecast(coordinates) {
   console.log(coordinates);
   let apiKey = "0efb4fc16a9ed98dc0b3aafd8491d6ad"; //Open weather API provided by SheCodes
-  // let apiKey = "82306d676704cfat267o51ab7b40384d";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=Imperial`;
   // let apiUrl = `https://api.shecodes.io/weather/v1/current?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=${apiKey}`;
-  console.log(apiUrl);
   axios.get(apiUrl).then(displayForecast);
 }
 
@@ -150,6 +192,9 @@ function handleSubmit(event) {
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
+
+let searchButton = document.querySelector("#search-button");
+form.addEventListener("click", handleSubmit);
 
 //Deleted
 // let fahrenheitLink = document.querySelector("#fahrenheit-link");

@@ -22,6 +22,9 @@ input {
   border-left-color: #dfe0e0;
   border-right-color: #dfe0e0;
 }
+input:focus {
+  border: 0px;
+}
 
 h1 {
   margin: 30px 0 10px;
@@ -89,6 +92,11 @@ a {
 #current-weather-logo {
   font-size: 120px;
 }
+#unit {
+  position: relative;
+  text-align: start;
+  top: -34px;
+}
 
 .app {
   margin: 20px 0;
@@ -102,7 +110,8 @@ a {
   margin: 0 auto;
   border-radius: 20px;
   max-width: 700px;
-  background: #e7eaf6;
+  /* background: #e7eaf6; */
+  background: #dbdfea;
   box-shadow: 0px 0px 10px 10px #0f2e5f;
   border: 2px solid #041734;
 }
@@ -124,6 +133,7 @@ a {
   font-size: 35px;
   font-weight: 600;
   margin-bottom: 5px;
+  margin-left: 30px;
 }
 .detailed-weather-info {
   font-size: 18px;
@@ -156,6 +166,11 @@ a {
   color: rgb(73, 73, 73);
   cursor: default;
 }
-/* .current-weather-info .active:hover {
-  text-decoration: none;
-} */
+
+.button-search {
+  width: 100%;
+  background-color: #1c3f7b;
+  border: 1px solid #1c3f7b;
+  margin-top: 11px;
+  color: #dfe0e0;
+}
