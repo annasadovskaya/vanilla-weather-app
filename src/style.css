@@ -73,25 +73,16 @@ div .current-weather-info {
 li {
   list-style-type: none;
 }
-#search-city {
-  padding-left: 10px;
-  line-height: 34px;
-  margin: 9px 0 11px;
-}
+
 #search-box {
   padding: 2px;
   border: 0;
 }
-button {
-  text-align: center;
-  margin-top: 10px;
-}
+
 a {
   text-decoration: none;
 }
-#current-weather-logo {
-  font-size: 120px;
-}
+
 #unit {
   position: relative;
   text-align: start;
@@ -104,13 +95,12 @@ a {
   font-family: "Roboto", sans-serif;
   color: rgb(218, 218, 218);
   font-size: 18px;
-  font-weight: 400;
+  font-weight: 600;
 }
 .card {
   margin: 0 auto;
   border-radius: 20px;
   max-width: 700px;
-  /* background: #e7eaf6; */
   background: #dbdfea;
   box-shadow: 0px 0px 10px 10px #0f2e5f;
   border: 2px solid #041734;
@@ -118,9 +108,7 @@ a {
 .card-body {
   margin: 15px;
 }
-.search-button {
-  margin-top: 11px;
-}
+
 .time {
   text-align: center;
   font-family: "Poppins", sans-serif;
@@ -142,9 +130,7 @@ a {
 .catitalize-text:first-letter {
   text-transform: capitalize;
 }
-.next-weather-logo {
-  font-size: 40px;
-}
+
 .author {
   margin: 30px 0 10px;
 }
@@ -162,15 +148,16 @@ a {
   text-align: center;
   margin: 10px 0 20px;
 }
-.current-weather-info .active {
-  color: rgb(73, 73, 73);
-  cursor: default;
-}
 
 .button-search {
   width: 100%;
   background-color: #1c3f7b;
   border: 1px solid #1c3f7b;
-  margin-top: 11px;
+  margin-top: 12px;
   color: #dfe0e0;
+}
+.button-search:hover {
+  background-color: #ffffff;
+  border-color: #ffffff;
+  color: #1c3f7b;
 }
