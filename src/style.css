@@ -151,13 +151,13 @@ a {
 
 .button-search {
   width: 100%;
-  background-color: #1c3f7b;
-  border: 1px solid #1c3f7b;
+  background-color: #ffffff;
+  border: 1px solid #ffffff;
   margin-top: 12px;
-  color: #dfe0e0;
+  color: #1c3f7b;
 }
 .button-search:hover {
-  background-color: #ffffff;
-  border-color: #ffffff;
-  color: #1c3f7b;
+  background-color: #1c3f7b;
+  border-color: #1c3f7b;
+  color: #dfe0e0;
 }
